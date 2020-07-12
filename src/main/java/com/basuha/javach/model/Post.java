@@ -22,7 +22,7 @@ public class Post {
     @Column(length = 1028)
     protected String text;
 
-    protected String imageLink;
+    protected String filename;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "thread_id")

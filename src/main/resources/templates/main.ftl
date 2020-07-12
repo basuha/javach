@@ -7,5 +7,5 @@
     Hello world
 </div>
     <@f.form true/>
-    <@t.thread/>
+    <#include threadList/>
 </@c.page>

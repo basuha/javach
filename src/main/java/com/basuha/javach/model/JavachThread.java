@@ -27,7 +27,7 @@ public class JavachThread {
     @Column(length = 1028)
     protected String text;
 
-    protected String imageLink;
+    protected String filename;
 
     @OneToMany(mappedBy = "thread", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Post> posts;

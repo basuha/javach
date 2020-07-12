@@ -1,5 +1,5 @@
 <div class="card-columns">
-    <#list threadList as m>
+    <#list threadList as t>
         <#if m.filename??>
             <img src="/img/${m.filename}" class="card-img-top">
         </#if>
