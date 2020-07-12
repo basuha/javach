@@ -7,5 +7,5 @@
     Hello world
 </div>
     <@f.form true/>
-    <#include threadList/>
+    <#include "parts/thread-list.ftl"/>
 </@c.page>

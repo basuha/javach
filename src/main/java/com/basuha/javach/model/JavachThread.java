@@ -29,6 +29,10 @@ public class JavachThread {
 
     protected String filename;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "board_id")
+    private Board board;
+
     @OneToMany(mappedBy = "thread", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Post> posts;
 }
