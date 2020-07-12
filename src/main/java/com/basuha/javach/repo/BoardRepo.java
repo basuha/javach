@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface BoardRepo extends CrudRepository<Board, String> {
     List<Board> findAll();
+    Board getById(String id);
 }

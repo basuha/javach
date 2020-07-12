@@ -14,10 +14,16 @@ public class MainController {
     @Autowired
     private BoardRepo boardRepo;
 
-    @GetMapping("/b")
+    @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("threadList", boardRepo.findAll());
-        return "b";
+        model.addAttribute("boardList", boardRepo.findAll());
+        return "index";
+    }
+
+    @GetMapping("/{boardId}")
+    public String board(Model model, @PathVariable String boardId) {
+        model.addAttribute("board", boardRepo.getById(boardId));
+        return "board";
     }
 
     @PostMapping("/{boardId}/{threadId}")
@@ -27,6 +33,6 @@ public class MainController {
 
     @GetMapping("/{boardId}/{threadId}")
     public String thread(@PathVariable String boardId, @PathVariable Long threadId) {
-        return "b";
+        return "board";
     }
 }
