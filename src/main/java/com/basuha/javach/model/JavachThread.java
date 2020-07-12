@@ -1,6 +1,7 @@
 package com.basuha.javach.model;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
+@Table(name = "javach_thread")
 public class JavachThread {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -22,6 +24,7 @@ public class JavachThread {
     @NonNull
     protected String author;
     @NonNull
+    @Column(length = 1028)
     protected String text;
 
     protected String imageLink;
