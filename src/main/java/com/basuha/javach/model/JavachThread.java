@@ -1,5 +1,6 @@
 package com.basuha.javach.model;
 
+import lombok.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
@@ -7,23 +8,24 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
-@Table(name = "thread")
 public class JavachThread {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
-    private Long time;
-    private String author;
-    private String text;
+    protected Long id;
+    @NonNull
+    protected Long time;
+    @NonNull
+    protected String author;
+    @NonNull
+    protected String text;
 
-    @OneToMany
-    private List<String> images;
+    protected String imageLink;
 
-    @OneToMany
+    @OneToMany(mappedBy = "thread", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Post> posts;
-
-    public static void main(String[] args) {
-        System.out.println(new Date().toString());
-    }
 }
