@@ -1,6 +1,6 @@
 <#macro form isThread>
     <p class="mx-auto" style="width: 20%;">
-        <a  data-toggle="collapse" href="#messageForm" role="button" aria-expanded="false" aria-controls="messageForm">
+        <a data-toggle="collapse" href="#messageForm" role="button" aria-expanded="false" aria-controls="messageForm">
             Create thread
         </a>
     </p>

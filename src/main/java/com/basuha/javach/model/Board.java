@@ -1,9 +1,6 @@
 package com.basuha.javach.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,12 +8,14 @@ import java.util.List;
 @Getter
 @Setter
 @RequiredArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Board {
     @Id
+    @NonNull
     private String id;
 
+    @NonNull
     private String description;
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
